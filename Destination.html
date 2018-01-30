@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/destinationStylesheet.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" scr="vivek.js"></script>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+	<script src="script/destination.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/headerstyle.css">
+</head>
+<body>
+<div class="feedback"><button class="btn-primary feedbackBtn "> Feedback</button> <div class="feedbackForm animated hide" style="width: 45vw;"><button class=" btn btn-primary feedbackCloseBtn pull-right"  style="margin-right: 5%"><span class="glyphicon glyphicon-remove " aria-hidden="true"></span></button><form >
+<div class="form-group" style="font-size: 2em">Feedback Form:</div>
+    <div class="form-group">
+    <label for="email">First Name:</label>
+      <input type="text" class="form-control" id="fname" placeholder="Enter first name" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" required="">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Message:</label>
+      <textarea type="text" class="form-control" id="pwd" placeholder="Enter feedback"></textarea>
+    </div>
+    
+    <input type="submit" class="btn btn-default" value="Submit">
+  </form></div></div>
+<div class="container-fluid hide" id="menu" style="z-index: 99999999999">
+  
+<div class="row" style="min-height: 100vh">
+  <div class="col-lg-8 animated " id="menu1" style="min-height: 100vh; ">
+    <div class="homemenu animated" style="margin:8%; padding: 2%, color:rgba(0,0,0,0.4);">
+      HOME<br><br>
+      Home<br><br>
+      Home
+    </div>
+    <div class="profileMenu hide animated" style="margin:8%; padding: 2%">
+      PROFILE<br><br>
+      Profile<br><br>
+      Profile
+    </div>
+    <div class="messagesMenu hide animated" style="margin:8%; padding: 2%">
+      MESSAGES<br><br>
+      Messages<br><br>
+      Messages
+    </div>
+    <div class="settingsmenu hide animated" style="margin:8%; padding: 2%">
+      SETTINGS<br><br>
+      Settings<br><br>
+      Settings
+    </div>
+
+  </div>
+  <div class="col-lg-4 animated" id="menu2" style="min-height: 100vh; padding: 0 !important"><button class="pull-right btn btn-primary closeBtn" id="menubtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+
+  <ul class="nav nav-pills nav-stacked" style="margin-top: 33%" role="tablist">
+  <li role="presentation" class=""><a href="#home" id="home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+  <li role="presentation"><a href="#profile" aria-controls="home" id="profile" role="tab" data-toggle="tab">Destinations</a></li>
+  <li role="presentation"><a href="#messages" aria-controls="home" id="messages" role="tab" data-toggle="tab">Experiences</a></li>
+  <li role="presentation"><a href="#settings" aria-controls="home" id="settings" role="tab" data-toggle="tab">Settings</a></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+<button class="btn btn-primary hide pull-right removeBlur" id="menutoggle"  style="position: fixed; margin-top: 2%;  z-index: 9999999; right: 0"><span class=" glyphicon glyphicon-list" aria-hidden="true" style="transform: rotate(180deg);"></span></button>
+
+<div class="container-fluid header removePadding" style="height: 80vh;">
+<nav class="navbar navbar-default nav-lg" style="">
+  <div class="container" style="border-bottom: 1px solid white">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Travel</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a href="index.html">Home</a></li>
+      <li><a href="#" class="selected">Destinations</a></li>
+      <li><a href="experience.html">Experiences</a></li> 
+    
+      <li ><a href="AboutUS.html">About Us</a></li>
+      <li ><a href="blog.html">Blog</a></li>
+    </ul>
+    </div>
+  </div>
+</nav> 
+
+<div id="myHeader" >
+    <img class="img-responsive" src="images/slide5_1.jpg" style="position: fixed;z-index: -1;height: auto;width: 100%; background-size: cover;">
+</div>
+<div class="text">
+	<div class="slide">
+		<h4 class="subtitle">Inspiration without the perspiration</h4>
+		<h3 class="title">New ways to plan your vacation on the go</h3>
+	</div>
+</div>
+</div>
+<div class="mainbody">
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="map">
+				<img class="bg" src="images/home_map.png"/>
+				<div class="continents">
+					<img id ="europe" src="images/home_map_europe.png" class="europe" alt="Europe"/>
+					<img id="africa" src="images/home_map_africa.png" class="africa" alt="Africa"/>
+					<img id="asia" src="images/home_map_asia.png" class="asia" alt="Asia"/>
+					<img id="oceania" src="images/home_map_oceania.png" class="oceania" alt="Oceania"/>
+					<img id="usa" src="images/home_map_usa.png" class="usa" alt="North America"/>
+					<img id="south-america" src="images/home_map_south-america.png" class="south-america" alt="South America"/>
+				</div>
+				<div class="links">
+					<a href="#destinations" id="linkEurope" class="europe">5</a>
+					<a href="#destinations" id="linkAfrica" class="africa">3</a>
+					<a href="#destinations" id="linkAsia" class="asia">1</a>
+					<a href="#destinations" id="linkOceania" class="oceania">1</a>
+					<a href="#destinations" id="linkUsa" class="usa">3</a>
+					<a href="#destinations" id="linkSouth-america" class="south-america">2</a>
+				</div>
+			</div>
+		</div>
+		<div id="right" class="col-md-6">
+			<div id="alldestination">
+		        <h2>Our Destinations</h2>
+		        <p id="para">We’re all connected by a love for travel!</p>
+		        <p>Destinations lets you explore both real and imaginary places in virtual reality with friends. Visit and learn about different countries, explore your favorite game environment, or play games with other players – invite your friends and go explore!</p>
+		        <p>Our travel guides, which are curated by Travel + Leisure editors and a network of local correspondents, highlight the best hotels, restaurants, shops, bars</p>
+		    </div>
+		    <div id="europedestination" style="display: none">
+		        <h2>Europe</h2>
+		        <p id="para">Woody Allen, like so many Americans, finally succumbed to Europe's charms, directing tributes to London, Barcelona, Paris, and now, To Rome with Love.</p>
+		        <p>Destinations lets you explore both real and imaginary places in virtual reality with friends. Visit and learn about different countries, explore your favorite game environment, or play games with other players – invite your friends and go explore!</p>
+		    </div>
+		    <div id="africadestination" style="display: none">
+		        <h2>Africa</h2>
+		        <p id="para">I never knew of a morning in Africa when I woke up and was not happy!</p>
+		        <p>Woody Allen, like so many Americans, finally succumbed to Europe's charms, directing tributes to London, Barcelona, Paris, and now, To Rome with Love. Destinations lets you explore both real and imaginary places in virtual reality with friends. Visit and learn about different countries, explore your favorite game environment, or play games with other players – invite your friends and go explore!</p>
+		    </div>
+		    <div id="asiadestination" style="display: none">
+		        <h2>Asia</h2>
+		        <p id="para">Dont be a Tourist! Be a Traveller</p>
+		        <p>The heart of North America beats through towering forests, undulating fields, high-plain deserts, pulsating metropolises and offbeat oases. Destinations lets you explore both real and imaginary places in virtual reality with friends. Visit and learn about different countries, explore your favorite game environment, or play games with other players – invite your friends and go explore!</p>
+		    </div>
+		    <div id="oceaniadestination" style="display: none">
+		        <h2>Oceania</h2>
+		        <p id="para">"To do that I will have to prove myself in time trial and the road race to Oceania"</p>
+		        <p>>Our travel guides, which are curated by Travel + Leisure editors and a network of local correspondents, highlight the best hotels, restaurants, shops, bars. Destinations lets you explore both real and imaginary places in virtual reality with friends. Visit and learn about different countries, explore your favorite game environment, or play games with other players – invite your friends and go explore!
+		        </p>
+		    </div>
+		    <div id="usadestination" style="display: none">
+		        <h2>North America</h2>
+		        <p id="para">is the roar of rushing waters</p>
+		        <p>The heart of North America beats through towering forests, undulating fields, high-plain deserts, pulsating metropolises and offbeat oases.</p>
+		        <p>Each year, millions of travellers pass through some of the continent's most iconic destinations, like Times Square, Niagara Falls and more</p>
+		    </div>
+		    <div id="sadestination" style="display: none">
+		        <h2>South America</h2>
+		        <p id="para">Its better to see something once, than to hear about it a thousand times! </p>
+		        <p>To do that I will have to prove myself in time trial and the road race. Destinations lets you explore both real and imaginary places in virtual reality with friends. Visit and learn about different countries, explore your favorite game environment, or play games with other players – invite your friends and go explore!</p>
+		    </div>
+		</div>
+	</div>
+</div>
+<div class="regions">
+	<div class="container">
+		 <div class="items">
+		    <a class="filter-button" id="all" data-filter="all" href="#regions">All<span class="count">15</span></a>
+		    <a class="filter-button" id="europeBtn" data-filter="europe" href="#regions">Europe<span class="count">5</span></a>
+		    <a class="filter-button" id="africaBtn" data-filter="africa" href="#regions">Africa<span class="count">3</span></a>
+		    <a class="filter-button" id="asiaBtn" data-filter="asia" href="#regions">Asia<span class="count">1</span></a>
+		    <a class="filter-button" id="oceaniaBtn" data-filter="oceania" href="#regions">Oceania<span class="count">1</a>
+		    <a class="filter-button" id="usaBtn" data-filter="usa" href="#regions">USA<span class="count">2</span></a>
+		    <a class="filter-button" id="samericaBtn" data-filter="south-america" href="#regions">South-America<span class="count">2</span></a>
+		  </div>
+    </div>
+</div>
+<div class="container" id="destinations">
+    <div class="row">
+        <div class="filter europe">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="tourdemountblanc.html">
+						<div class="package-thumb">
+							<img src="images/destination/europe/europe1.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>TOUR DU MONT BLANC</h3>
+							<p>Looking down on the Chamonix Valley, the village homes 1,000 meters below look as if they belong in a board game</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter europe">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="finnmark.html">
+						<div class="package-thumb">
+							<img src="images/destination/europe/europe2.jpeg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>FINNMARK PLATEAU WEST</h3>
+							<p>This trip is customizable, so we can extend, shorten or add other experiences so that it fits your budget.</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter europe">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="france.html">
+						<div class="package-thumb">
+							<img src="images/destination/europe/europe3.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>CHAMONIX ADVENTURE</h3>
+							<p>Unique experiences like staying in an Air Stream on the Salar de Uyuni or biking so that it fits your budget.</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter europe">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="rome.html">
+						<div class="package-thumb">
+							<img src="images/destination/europe/europe4.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>FLORENCE TO ROME BY VESPA</h3>
+							<p>Bolivia is a place that feels different. There is a sense of magic in the air so that it fits your budget. </p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter europe">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="finnmark.html">
+						<div class="package-thumb">
+							<img src="images/destination/europe/europe5.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>Deer-migration-in-finnmark</h3>
+							<p>Enjoy a multitude of activities offered by the Estancia La Sofia. Half and full-day excursions on horseback</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+
+        <div class="filter africa">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="africa.html">
+						<div class="package-thumb">
+							<img src="images/destination/africa/africa1.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>OLAKIRA TENTED CAMP</h3>
+							<p>Meet the Uchupiamonas, caretakers of this stretch of the Amazon so that it fits your budgeton horseback.</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$2200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter africa">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="africa.html">
+						<div class="package-thumb">
+							<img src="images/destination/africa/africa2.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>HIKING AND SAFARI</h3>
+							<p>The Salt flats, and the surrounding altiplano to recharge each night, with it's colorful lakes so that it fits your budget.</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 130 review</span>
+							</span>
+							<span class="pull-right price">$1600</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter africa">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="africa.html">
+						<div class="package-thumb">
+							<img src="images/destination/africa/africa3.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>SOUTH AFRICAN ADVENTURE</h3>
+							<p>A series of strategically placed hotels, with necessary amenities, will give you the chance to recharge each night.</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<span class="review-count"> - 100 review</span>
+							</span>
+							<span class="pull-right price">$1300</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter africa">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="africa.html">
+						<div class="package-thumb">
+							<img src="images/destination/africa/africa4.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>CAMPI YA KANZI</h3>
+							<p>Visit and cycle through multiple Monasteries and stop for a visit at Tibet's oldest one, Ganden so that it fits your budget.</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+
+        <div class="filter asia">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="africa.html">
+						<div class="package-thumb">
+							<img src="images/destination/asia/asia1.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>OLAKIRA TENTED CAMP</h3>
+							<p>The China-Nepal Friendship Highway is a 500 mile panoramic route that links together Tibet's capital, Lhasa.</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+
+        <div class="filter oceania">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="oceania.html">
+						<div class="package-thumb">
+							<img src="images/destination/oceania/oceania1.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>SUKAU RAINFOREST LODGE</h3>
+							<p>As you navigate the country, the range of possibilities is noticeably endless. Your first top, Buenos Aires. </p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+
+        <!-- <div class="filter usa">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="northamerica.html">
+						<div class="package-thumb">
+							<img src="images/destination/usa/usa1.jpeg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>GUADALUPE ISLAND</h3>
+							<p>Enjoy a multitude of activities offered by the Estancia La Sofia. Half and full-day excursions on horseback.</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div> -->
+        <div class="filter usa">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="northamerica.html">
+						<div class="package-thumb">
+							<img src="images/destination/usa/usa2.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>CONTINENTAL DIVE</h3>
+							<p>Hop on another quick flight to Salta where your adventure continues to pick up momentum as you trek La Yesera </p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter usa">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="northamerica.html">
+						<div class="package-thumb">
+							<img src="images/destination/usa/usa3.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>POLAR BEAR AND NARWHAL</h3>
+							<p>Hop on your experience will come full circle as you make your way back to Buenos Aires as been the industry'</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+
+
+        <div class="filter south-america">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="southamerica.html">
+						<div class="package-thumb">
+							<img src="images/destination/south-america/sa1.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>REFUGIO ECOLOGICAL CAMAN</h3>
+							<p>Finally, your experience will come full circle as you make your way back to Buenos Aires as been the industry's</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+        <div class="filter south-america">
+            <div class="col-xs-6 col-sm-6 col-md-4">
+				<div class="package-list" style="visibility: visible; animation-name: fadeInUp;">
+					<a href="southamerica.html">
+						<div class="package-thumb">
+							<img src="images/destination/south-america/sa2.jpg" alt="">
+							<div class="duration">
+							5 days
+							<br>
+							4 nights
+							</div>
+						</div>
+						<div class="package-info">
+							<h3>BOLEVIAN ANTIPLANO</h3>
+							<p>From horseback riding to birdwatching, you will have plenty of time to reflect on your recent adventures</p>
+							<span class="pull-left">
+						      	<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star"></i>
+								<i class="fa fa-star-o"></i>
+								<span class="review-count"> - 90 review</span>
+							</span>
+							<span class="pull-right price">$1200</span>	
+						</div>
+					</a>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+</div>
+<section class="count-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul>
+					<li>
+						<span class="fa fa-heart-o"></span>
+						<h2><span id="counter1"></span></h2>
+						<h4>Happy Clients</h4>
+					</li>
+					<li>
+						<i class="fa fa-bed"></i>
+						<h2><span id="counter2"></span></h2>
+						<h4>Popular Hotes</h4>
+					</li>
+					<li>
+						<i class="fa fa-flag-checkered"></i>
+						<h2><span id="counter3"></span></h2>
+						<h4>Top Destinations</h4>
+					</li>
+					<li>
+						<i class="fa fa-ship"></i>
+						<h2><span id="counter4"></span></h2>
+						<h4>Cruises</h4>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</section>
+<footer>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	        <p><h1>Social</h1></p>
+	        <p><i class="fa fa-facebook-square fa-2x fa-3x " aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-instagram fa-2x fa-3x " aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-twitter-square fa-2x fa-3x" aria-hidden="true"></i></p>
+	        </div>
+	        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	            <p><h1>Information</h1></p>
+	            <p ><ul class="info">
+	                <li>Terms & Conditions</li>
+	                <li>About us</li>
+	                <li>Copyright</li>
+	            </ul></p>
+	        </div>
+	        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	            <p><h1>Contact us</h1></p>
+	            <p class="info"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i>&nbsp;&nbsp; (617)-309-XXXX</p>
+	            <p class="info"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp; bhar.m@husky.neu.edu</p>
+	            <p><div style="display: inline-block;"><i class="fa fa-location-arrow fa-2x " aria-hidden="true"></i></div>&nbsp;&nbsp;<div style="display: inline-block;"><p class="info">360 huntington avenue<br>Boston MA 02120</p></div></p>
+	        </div>
+	    </div>
+    </div>
+</footer>
+</body>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+
+
+
+
+
+  $(document).ready(function() {
+//$(window).scrollTop(200);
+var s;
+
+
+
+ 
+
+if($(".header").offset().top == 0) {
+  $("button#menutoggle").addClass("hide");
+}
+    var viewportWidth = $(window).width();
+    if (viewportWidth < 600) {
+            $(".navbar-nav").removeClass("pull-right");
+            $(".navbar").addClass("navbar-burger");
+    }
+    
+    $(window).resize(function () {
+    
+        if (viewportWidth < 600) {
+            $(".navbar-nav").removeClass("pull-right");
+            $(".navbar").addClass("navbar-burger");
+        }
+    }); 
+
+$("button#menutoggle").click(function() {
+  s = $(window).scrollTop();
+  //$(window).scrollTop(0);
+  $("#menu").removeClass("hide");
+  $("#menu1").removeClass("slideOutLeft");
+  $("#menu2").removeClass("slideOutRight");
+  $("#menu1").addClass("slideInLeft");
+  $("#menu2").addClass("slideInRight");
+  $("#menu").nextAll().removeClass("removeBlur");
+  $("#menu").nextAll().addClass("blur");
+  $(".carousel-control, img").addClass("zindex");
+  $("body").css("overflow","hidden");
+});
+
+$("button#menubtn").click(function() {
+  
+  $("#menu1").removeClass("slideInLeft");
+  $("#menu2").removeClass("slideInRight");
+  $("#menu1").addClass("slideOutLeft");
+  $("#menu2").addClass("slideOutRight");
+
+  //$("#main").removeClass("hide");
+  setTimeout(function(){ 
+  $("#menu").addClass("hide");
+  $("#menu").nextAll().removeClass("blur");
+  $("#menu").nextAll().addClass("removeBlur"); 
+$("button#menutoggle").addClass("hide");
+$("body").css("overflow","visible");
+checkMenuToggleBtn();
+$(window).scrollTop(s);}, 300);
+
+  function checkMenuToggleBtn() {
+    var sc = $(window).scrollTop();
+    var sc2 = ($("nav").offset().top + $("nav").outerHeight());
+
+    if(sc > sc2) {
+      $("button#menutoggle").removeClass("hide");
+    }
+  }
+  
+
+});
+
+$(window).scroll(function() {
+
+  var x = $(this).scrollTop();
+
+  if (x >= ($("nav").offset().top + $("nav").outerHeight()) ) {
+    $("button#menutoggle").removeClass("hide");
+  }
+
+  if(x <= ($("nav").offset().top + $("nav").outerHeight())) {
+    $("button#menutoggle").addClass("removeBlur");
+    $("button#menutoggle").addClass("hide");
+    $("button#menutoggle").addClass("removeBlur");
+  }
+});
+
+
+$("a#home").hover(function() {
+  $('.homemenu').removeClass("hide");
+  $('.homemenu').addClass("fadeIn");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").addClass("hide");
+});
+
+ $('a#messages').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").removeClass("hide");
+  $(".messagesMenu").addClass("fadeIn");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").addClass("hide");
+});
+
+$('a#profile').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").removeClass("hide");
+  $(".profileMenu").addClass("fadeIn");
+  $(".settingsmenu").addClass("hide");
+});
+
+$('a#settings').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").removeClass("hide");
+  $(".settingsmenu").addClass("fadeIn");
+});
+
+
+$("button.feedbackBtn").click(function() {
+
+  $("button.feedbackBtn").addClass("hide");
+  $(".feedbackForm").removeClass("hide");
+  $(".feedbackForm").addClass("slideInRight");
+
+});
+
+$("button.feedbackCloseBtn").click(function() {
+  $(".feedbackForm").addClass("hide");
+  $("button.feedbackBtn").removeClass("hide");
+  $("button.feedbackBtn").css("margin-right", "0");
+})
+
+});
+</script>
+
+
+
+
+
+
+
+
+</html>

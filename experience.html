@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<head>
+<!-- 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/headerstyle.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/050e652ca9.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/headerstyle.css">
+	<link rel="stylesheet" type="text/css" href="experience.css">
+<script>
+var $item = $('.carousel .item'); 
+var $wHeight = $(window).height();
+$item.eq(0).addClass('active');
+$item.height($wHeight);   
+$item.addClass('full-screen');
+
+$('.carousel img').each(function() {
+  var $src = $(this).attr('src');
+  var $color = $(this).attr('data-color');
+  $(this).parent().css({
+    'background-image' : 'url(' + $src + ')',
+    'background-color' : $color
+  });
+  $(this).remove();
+});
+
+$(window).on('resize', function (){
+  $wHeight = $(window).height();
+  $item.height($wHeight);
+});
+
+$('.carousel').carousel({
+  interval: 6000,
+  pause: "false"
+});
+</script>
+
+</head>
+<body >
+
+
+
+
+<div class="container-fluid hide" id="menu" style="z-index: 99999999999">
+  
+<div class="row" style="min-height: 100vh">
+  <div class="col-lg-8 animated " id="menu1" style="min-height: 100vh; ">
+    <div class="homemenu animated" style="margin:8%; padding: 2%, color:rgba(0,0,0,0.4);">
+      <p><h3 >Journey's worth taking</h1></p>
+      <p class="menuContent"> We customize adventure itineraries, book your travel and then support </p>
+    </div>
+    <div class="profileMenu hide animated" style="margin:8%; padding: 2%">
+      PROFILE<br><br>
+      Profile<br><br>
+      Profile
+    </div>
+    <div class="messagesMenu hide animated" style="margin:8%; padding: 2%">
+      MESSAGES<br><br>
+      Messages<br><br>
+      Messages
+    </div>
+    <div class="aboutmenu hide animated" style="margin:8%; padding: 2%">
+      SETTINGS<br><br>
+      Settings<br><br>
+      Settings
+    </div>
+
+    <div class="blogmenu hide animated" style="margin:8%; padding: 2%">
+      SETTINGS<br><br>
+      Settings<br><br>
+      Settings
+    </div>
+
+
+
+  </div>
+  <div class="col-lg-4 animated" id="menu2" style="min-height: 100vh; padding: 0 !important"><button class="pull-right btn btn-primary closeBtn" id="menubtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+
+  <ul class="nav nav-pills nav-stacked" style="margin-top: 33%" role="tablist">
+  <li role="presentation" class=""><a href="#index.html" id="home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+  <li role="presentation"><a href="Destination.html" aria-controls="home" id="profile" role="tab" data-toggle="tab">Destinations</a></li>
+  <li role="presentation"><a href="experience.html" aria-controls="home" id="messages" role="tab" data-toggle="tab">Experiences</a></li>
+  <li role="presentation"><a href="AboutUs.html" aria-controls="home" id="settings" role="tab" data-toggle="tab">About Us</a></li>
+  <li role="presentation"><a href="blog.html" aria-controls="home" id="blog" role="tab" data-toggle="tab">Blog</a></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<button class="btn btn-primary hide pull-right removeBlur" id="menutoggle"  style="position: fixed; margin-top: 2%;  z-index: 9999999; right: 0"><span class=" glyphicon glyphicon-list" aria-hidden="true" style="transform: rotate(180deg);"></span></button>
+
+<div class="feedback"><button class="btn-primary feedbackBtn "> Feedback</button> <div class="feedbackForm animated hide" style="width: 45vw;"><button class=" btn btn-primary feedbackCloseBtn pull-right"  style="margin-right: 5%"><span class="glyphicon glyphicon-remove " aria-hidden="true"></span></button><form >
+<div class="form-group" style="font-size: 2em">Feedback Form:</div>
+    <div class="form-group">
+    <label for="email">First Name:</label>
+      <input type="text" class="form-control" id="fname" placeholder="Enter first name" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" required="">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Message:</label>
+      <textarea type="text" class="form-control" id="pwd" placeholder="Enter feedback"></textarea>
+    </div>
+    
+    <input type="submit" class="btn btn-default" value="Submit">
+  </form></div></div>
+
+
+
+
+
+
+
+<div class="container-fluid header removePadding" style="height: 80vh;">
+<nav class="navbar navbar-default nav-lg" style="">
+  <div class="container " style="border-bottom: 1px solid white">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Travel</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a href="index.html">Home</a></li>
+      <li><a href="Destination.html">Destinations</a></li>
+      <li><a href="experience.html">Experiences</a></li> 
+    
+      <li ><a href="AboutUS.html">About Us</a></li>
+      <li ><a href="blog.html">Blog</a></li>
+    </ul>
+    </div>
+  </div>
+</nav> 
+
+<div id="myHeader" >
+    <!-- Indicators -->
+   
+
+    <!-- Wrapper for slides -->
+    <img class="img-responsive" src="images/slide5_5.jpg" style="position: fixed;z-index: -1;height: auto;width: 100%; background-size: cover;">
+
+    <!-- Left and right controls -->
+    
+  </div>
+
+
+</div>
+
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Portfolio</h2><br>
+  <h4>What we have created</h4>
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <img class="img-responsive" src="img/romantic.jpg" alt="">
+            <div class="overlay">
+                <h2>Romantic</h2>
+        <p> 
+          <a href="#"></a>
+        </p> 
+            </div>
+    </div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <img class="img-responsive" src="img/wild.jpg" alt="">
+            <div class="overlay">
+                <h2>Wild</h2>
+        <p> 
+          <a href="#"></a>
+        </p> 
+            </div>
+    </div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <img class="img-responsive" src="img/adventure2.jpg" alt="">
+            <div class="overlay">
+                <h2>Care free</h2>
+        <p> 
+          <a href="#"></a>
+        </p> 
+            </div>
+    </div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <img class="img-responsive" src="img/capture.jpg" alt="">
+            <div class="overlay">
+                <h2>Capture</h2>
+        <p> 
+          <a href="#"></a>
+        </p> 
+            </div>
+    </div>
+</div>
+</div>
+
+<div id="tour" class="bg-1">
+  <div class="container">
+
+    <h3 class="text-center">TOUR DATES</h3>
+    <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
+    <div class="container">
+  <div class="">
+    <h2>Customize your Experience</h2>
+  </div>
+    
+    <div>
+     <select name="category" id="category">
+         <span> <option value="all">Filter by Travel Theme</option> </span>
+          <option value="romantic">Romantic</option>
+          <option value="adventure">Adventure</option>
+          <option value="category3">Category 3</option>
+          <option value="category4">Category 4</option>
+          <option value="category5">Category 5</option> 
+        </select>
+
+         
+        <select name="category" id="cat">
+          <option value="all">Filter by Activity</option>
+          <option value="trekking">Trekking</option>
+          <option value="cat2">Underwater sports</option>
+          <option value="cat3">Mountain biking</option>
+          <option value="cat3">Air Ride</option>
+        </select>
+       
+    </div>
+    <br/>
+    
+    <div class="row">
+        <div class="col-md-3 filter romantic trekking photo">
+            <div class="each-item">
+                <img class="port-image" src="img/rio.jpg"/>
+                <div class="cap1">
+                    <h3>Oceania</h3>
+                    <p>Dream live travel</p>
+                </div>
+                <div class="cap2">
+                    <p class="text-center"> <a href="oceania.html">Visit</a></p>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="col-md-3 filter romantic cat1 photo">
+            <div class="each-item">
+                <img class="port-image" src="img/romantic.jpg"/>
+                <div class="cap1">
+                    <h3>Africa</h3>
+                    <p>Take a romantic trail with us</p>
+                </div>
+                <div class="cap2">
+                    <p class="text-center"><a href="africa.html">Visit</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 filter romantic cat1">
+            <div class="each-item">
+                <img class="port-image" src="img/romantic3.jpg"/>
+                <div class="cap1">
+                    <h3>Finmark</h3>
+                    <p>Let the world experience you</p>
+                </div>
+                <div class="cap2">
+                    <p class="text-center"><a href="finnmark.html">Visit</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 filter romantic cat3 photo">
+            <div class="each-item">
+                <img class="port-image" src="img/romantic5.jpg"/>
+                <div class="cap1">
+                    <h3>South Globe</h3>
+                    <p>Travel the world with us</p>
+                </div>
+                <div class="cap2">
+                    <p class="text-center"><a href="southamerica.html">Visit</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 filter adventure trekking graphic">
+            <div class="each-item">
+                <img class="port-image" src="img/adventure.jpg"/>
+                <div class="cap1">
+                    <h3>Oceania</h3>
+                    <p></p>
+                </div>
+                <div class="cap2">
+                    <p class="text-center"><a href="oceania.html">Visit</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-3 filter adventure trekking photo">
+            <div class="each-item">
+                <img class="port-image" src="img/adventure2.jpg"/>
+                <div class="cap1">
+                    <h3>Romantic</h3>
+                    <p>Move the rome city with us</p>
+                </div>
+                <div class="cap2">
+                    <p class="text-center"><a href="rome.html">Visit</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 filter adventure photo">
+            <div class="each-item">
+                <img class="port-image" src="img/adventure3.jpg"/>
+                <div class="cap1">
+                    <h3>Adventure</h3>
+                    <p>Explore the world with us</p>
+                </div>
+                <div class="cap2">
+                    <p class="text-center"><a href="northamerica.html">Visit</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 filter adventure photo">
+            <div class="each-item">
+                <img class="port-image" src="img/adventure4.jpg"/>
+                <div class="cap1">
+                    <h3>Adventure</h3>
+                    <p>A car showroom for all verities of cars to display</p>
+                </div>
+                <div class="cap2">
+                    <p class="text-center"><a href="france.html">Visit</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+   
+  <script>
+ $(document).ready(function(){
+
+    $("select").change(function(){
+        var value = $('#category').val();
+       
+        var value2 = $('#cat').val(); 
+           
+        if(value == "all" || value2 =="all")
+        {
+            //$('.filter').removeClass('hidden');
+            if(value == "all" && value2 =="all") {
+            $('.filter').show('1000');
+          } else if(value == "all") {
+             $(".filter").not('.'+value2).hide('3000');
+         
+            $('.filter').filter('.'+value2).show('3000');
+
+          } else {
+             $(".filter").not('.'+value).hide('3000');
+         
+            $('.filter').filter('.'+value).show('3000');
+          }
+        }
+        else
+        {
+//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+            $(".filter").not('.'+value+'.'+value2).hide('3000');
+         
+            $('.filter').filter('.'+value+'.'+value2).show('3000');
+                
+            
+        }
+    });
+
+});
+
+  </script>
+
+
+
+  <script >
+    /* Create an array to hold the different image positions */
+var itemPositions = [];
+var numberOfItems = $('#scroller .item').length;
+
+/* Assign each array element a CSS class based on its initial position */
+function assignPositions() {
+    for (var i = 0; i < numberOfItems; i++) {
+        if (i === 0) {
+            itemPositions[i] = 'left-hidden';
+        } else if (i === 1) {
+            itemPositions[i] = 'left';
+        } else if (i === 2) {
+            itemPositions[i] = 'middle';
+        } else if (i === 3) {
+            itemPositions[i] = 'right';
+        } else {
+            itemPositions[i] = 'right-hidden';
+        }
+    }
+    /* Add each class to the corresponding element */
+    $('#scroller .item').each(function(index) {
+        $(this).addClass(itemPositions[index]);
+    });
+}
+
+/* To scroll, we shift the array values by one place and reapply the classes to the images */
+function scroll(direction) {
+    if (direction === 'prev') {
+        itemPositions.push(itemPositions.shift());
+    } else if (direction === 'next') {
+        itemPositions.unshift(itemPositions.pop());
+    }
+    $('#scroller .item').removeClass('left-hidden left middle right right-hidden').each(function(index) {
+        $(this).addClass(itemPositions[index]);
+    });        
+}
+
+/* Do all this when the DOMs ready */
+$(document).ready(function() {
+
+    assignPositions();
+    var autoScroll = window.setInterval("scroll('next')", 4000);
+  
+    /* Hover behaviours */
+    $('#scroller').hover(function() {
+        window.clearInterval(autoScroll);
+        $('.nav').stop(true, true).fadeIn(200);
+    }, function() {
+        autoScroll = window.setInterval("scroll('next')", 4000);
+        $('.nav').stop(true, true).fadeOut(200);
+    });
+
+    /* Click behaviours */
+    $('.prev').click(function() {
+        scroll('prev');
+    });
+    $('.next').click(function() {
+        scroll('next');
+    });
+
+});
+
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+  </script>
+<footer>
+	<div class="container">
+	    <div class="row">
+	        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	        <p><h1>Social</h1></p>
+	        <p><i class="fa fa-facebook-square fa-2x fa-3x " aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-instagram fa-2x fa-3x " aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-twitter-square fa-2x fa-3x" aria-hidden="true"></i></p>
+	        </div>
+	        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	            <p><h1>Information</h1></p>
+	            <p ><ul class="info">
+	                <li>Terms & Conditions</li>
+	                <li>About us</li>
+	                <li>Copyright</li>
+	            </ul></p>
+	        </div>
+	        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	            <p><h1>Contact us</h1></p>
+	            <p class="info"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i>&nbsp;&nbsp; (617)-309-XXXX</p>
+	            <p class="info"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp; bhar.m@husky.neu.edu</p>
+	            <p><div style="display: inline-block;"><i class="fa fa-location-arrow fa-2x " aria-hidden="true"></i></div>&nbsp;&nbsp;<div style="display: inline-block;"><p class="info">360 huntington avenue<br>Boston MA 02120</p></div></p>
+	        </div>
+	    </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+
+
+
+
+
+  $(document).ready(function() {
+//$(window).scrollTop(200);
+var s;
+
+
+
+ 
+
+if($(".header").offset().top == 0) {
+  $("button#menutoggle").addClass("hide");
+}
+    var viewportWidth = $(window).width();
+    if (viewportWidth < 600) {
+            $(".navbar-nav").removeClass("pull-right");
+            $(".navbar").addClass("navbar-burger");
+    }
+    
+    $(window).resize(function () {
+    
+        if (viewportWidth < 600) {
+            $(".navbar-nav").removeClass("pull-right");
+            $(".navbar").addClass("navbar-burger");
+        }
+    }); 
+
+$("button#menutoggle").click(function() {
+  s = $(window).scrollTop();
+  //$(window).scrollTop(0);
+  $("#menu").removeClass("hide");
+  $("#menu1").removeClass("slideOutLeft");
+  $("#menu2").removeClass("slideOutRight");
+  $("#menu1").addClass("slideInLeft");
+  $("#menu2").addClass("slideInRight");
+  $("#menu").nextAll().removeClass("removeBlur");
+  $("#menu").nextAll().addClass("blur");
+  $(".carousel-control, img").addClass("zindex");
+  $("body").css("overflow","hidden");
+});
+
+$("button#menubtn").click(function() {
+  
+  $("#menu1").removeClass("slideInLeft");
+  $("#menu2").removeClass("slideInRight");
+  $("#menu1").addClass("slideOutLeft");
+  $("#menu2").addClass("slideOutRight");
+
+  //$("#main").removeClass("hide");
+  setTimeout(function(){ 
+  $("#menu").addClass("hide");
+  $("#menu").nextAll().removeClass("blur");
+  $("#menu").nextAll().addClass("removeBlur"); 
+$("button#menutoggle").addClass("hide");
+$("body").css("overflow","visible");
+checkMenuToggleBtn();
+$(window).scrollTop(s);}, 300);
+
+  function checkMenuToggleBtn() {
+    var sc = $(window).scrollTop();
+    var sc2 = ($("nav").offset().top + $("nav").outerHeight());
+
+    if(sc > sc2) {
+      $("button#menutoggle").removeClass("hide");
+    }
+  }
+  
+
+});
+
+$(window).scroll(function() {
+
+  var x = $(this).scrollTop();
+
+  if (x >= ($("nav").offset().top + $("nav").outerHeight()) ) {
+    $("button#menutoggle").removeClass("hide");
+  }
+
+  if(x <= ($("nav").offset().top + $("nav").outerHeight())) {
+    $("button#menutoggle").addClass("removeBlur");
+    $("button#menutoggle").addClass("hide");
+    $("button#menutoggle").addClass("removeBlur");
+  }
+});
+
+
+$("a#home").hover(function() {
+  $('.homemenu').removeClass("hide");
+  $('.homemenu').addClass("fadeIn");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").addClass("hide");
+});
+
+ $('a#messages').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").removeClass("hide");
+  $(".messagesMenu").addClass("fadeIn");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").addClass("hide");
+});
+
+$('a#profile').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").removeClass("hide");
+  $(".profileMenu").addClass("fadeIn");
+  $(".settingsmenu").addClass("hide");
+});
+
+$('a#settings').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").removeClass("hide");
+  $(".settingsmenu").addClass("fadeIn");
+});
+
+
+$("button.feedbackBtn").click(function() {
+
+  $("button.feedbackBtn").addClass("hide");
+  $(".feedbackForm").removeClass("hide");
+  $(".feedbackForm").addClass("slideInRight");
+
+});
+
+$("button.feedbackCloseBtn").click(function() {
+  $(".feedbackForm").addClass("hide");
+  $("button.feedbackBtn").removeClass("hide");
+  $("button.feedbackBtn").css("margin-right", "0");
+})
+
+});
+</script>
+
+</body>
+</html>
