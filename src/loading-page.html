@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<style type="text/css">
+
+
+	@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+	}
+
+@keyframes type{ 
+  0% { width: 0; } 
+  100% {width: 100%;}
+} 
+
+
+.image {
+	animation: rotating 3s linear infinite;
+}
+
+.backanimation {
+	background-position: 0px 0px;
+	animation: animatedBackground 40s linear infinite;
+	font-family: myFirstFont;
+
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<div class="backanimation" style="width: 100%; height: 100vh; background-image: url('images/city.gif'); background-repeat: repeat-x; background-size: cover; background-color: rgba(255,171,0,0.8); text-align: center;">
+	<p style="padding-top: 10%; margin: 0;"><h1>
+	Journey's worth taking</h1></p>
+	<img src="images/plane.gif" class="image" width="15%" style="padding-top: 10%">
+</div>
+
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		
+		$("span.dot1").show().fadeIn();
+		$("span.dot2").show().delay(500).fadeIn();
+		$("span.dot3").show().delay(500).fadeIn();
+		//$("span.dot1, span.dot2, span.dot3").delay(500).hide();
+		
+
+	});
+</script>
+</html>

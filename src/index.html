@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel</title>
+	<meta name="viewport" content="width=device-width" initial-scale="1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+  
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script  src="vivek.js"></script>
+	
+	<script src="https://use.fontawesome.com/050e652ca9.js"></script>
+	<!--<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css"> -->
+
+</head>
+<body style="background-image: url('images/destinations_bg.jpg');">
+
+
+<div class="container-fluid hide" id="menu" style="z-index: 99999999999">
+  
+<div class="row" style="min-height: 100vh">
+  <div class="col-lg-8 animated " id="menu1" style="min-height: 100vh; ">
+    <div class="homemenu animated" style="margin:8%; padding: 2%, color:rgba(0,0,0,0.4);">
+      <p><h3 >Journey's worth taking</h1></p>
+      <p class="menuContent"> We customize adventure itineraries, book your travel and then support </p>
+    </div>
+    <div class="profileMenu hide animated" style="margin:8%; padding: 2%">
+      PROFILE<br><br>
+      Profile<br><br>
+      Profile
+    </div>
+    <div class="messagesMenu hide animated" style="margin:8%; padding: 2%">
+      MESSAGES<br><br>
+      Messages<br><br>
+      Messages
+    </div>
+    <div class="aboutmenu hide animated" style="margin:8%; padding: 2%">
+      SETTINGS<br><br>
+      Settings<br><br>
+      Settings
+    </div>
+
+    <div class="blogmenu hide animated" style="margin:8%; padding: 2%">
+      SETTINGS<br><br>
+      Settings<br><br>
+      Settings
+    </div>
+
+
+
+  </div>
+  <div class="col-lg-4 animated" id="menu2" style="min-height: 100vh; padding: 0 !important"><button class="pull-right btn btn-primary closeBtn" id="menubtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+
+  <ul class="nav nav-pills nav-stacked" style="margin-top: 33%" role="tablist">
+  <li role="presentation" class=""><a href="#index.html" id="home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+  <li role="presentation"><a href="destination.html" aria-controls="home" id="profile" role="tab" data-toggle="tab">Destinations</a></li>
+  <li role="presentation"><a href="experience.html" aria-controls="home" id="messages" role="tab" data-toggle="tab">Experiences</a></li>
+  <li role="presentation"><a href="AboutUs.html" aria-controls="home" id="settings" role="tab" data-toggle="tab">About Us</a></li>
+  <li role="presentation"><a href="blog.html" aria-controls="home" id="blog" role="tab" data-toggle="tab">Blog</a></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+<button class="btn btn-primary hide pull-right removeBlur" id="menutoggle"  style="position: fixed; margin-top: 2%;  z-index: 9999999; right: 0"><span class=" glyphicon glyphicon-list" aria-hidden="true" style="transform: rotate(180deg);"></span></button>
+
+<div class="feedback"><button class="btn-primary feedbackBtn "> Feedback</button> <div class="feedbackForm animated hide" style="width: 45vw;"><button class=" btn btn-primary feedbackCloseBtn pull-right"  style="margin-right: 5%"><span class="glyphicon glyphicon-remove " aria-hidden="true"></span></button><form >
+<div class="form-group" style="font-size: 2em">Feedback Form:</div>
+    <div class="form-group">
+    <label for="email">First Name:</label>
+      <input type="text" class="form-control" id="fname" placeholder="Enter first name" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" required="">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Message:</label>
+      <textarea type="text" class="form-control" id="pwd" placeholder="Enter feedback"></textarea>
+    </div>
+    
+    <input type="submit" class="btn btn-default" value="Submit">
+  </form></div></div>
+<div class="container-fluid header" style="height: 100vh;">
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
+  
+  <nav class="navbar navbar-default nav-lg navbar-burger" style="">
+  <div class="container " style="border-bottom: 1px solid white">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Travel</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a href="index.html">Home</a></li>
+      <li><a href="destination.html">Destinations</a></li>
+      <li><a href="experience.html">Experiences</a></li> 
+    <li><a href="AboutUS.html">About US</a></li>
+    <li><a href="Blog.html">Blog</a></li>
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+    </ul>
+    </div>
+  </div>
+</nav> 
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="">
+    <!-- Indicators -->
+   
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="images/slide5.jpg" alt="Chania" width="460" height="345">
+        <div class="carousel-caption">
+          <h1>"We are all connected by a love for travel!"</h1>
+          
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/slide8.jpg" alt="Chania" width="460" height="345">
+        <div class="carousel-caption">
+          <h1>"Adventure is worthwhile."</h1>
+          
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="images/slide6.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h1>"Travel is the only thing you buy that makes you richer."</h1>
+          
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/slide4.jpg" alt="Flower" width="460" height="345">
+        <div class="carousel-caption">
+          <h1>"Traveling - it leaves you speechless, then turns you into a storyteller."</h1>
+          
+        </div>
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+<div class="container" style="position: static !important; padding-top: 1%">
+	<h1  class="dest-heading">Destinations</h1>
+	<ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Europe</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Asia</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Australia</a></li>
+    
+  </ul>
+
+  <div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="home">
+  	<div class="row">
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/europe1.jpg" ></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/europe2.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/europe3.jpg"></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/europe4.jpg" ></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/europe5.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/europe6.jpg"></div>
+  	</div>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="profile">
+  	<div class="row">
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/asia1.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/asia2.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/asia3.jpg"></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/asia4.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 "><img class="tab-image img-responsive" src="images/asia5.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/asia6.jpg"></div>
+  	</div>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="messages">
+  	<div class="row">
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/australia1.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/australia2.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/australia3.jpg"></div>
+  	</div>
+  	<div class="row">
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/australia4.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/australia5.jpg"></div>
+  		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"><img class="tab-image img-responsive" src="images/australia6.jpg"></div>
+  	</div>
+  </div>
+  
+</div>
+
+</div>
+
+<footer class="container-fluid">
+	<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<p><h1>Social</h1></p>
+		<p><i class="fa fa-facebook-square fa-2x fa-3x " aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-instagram fa-2x fa-3x " aria-hidden="true"></i>&nbsp;&nbsp;<i class="fa fa-twitter-square fa-2x fa-3x" aria-hidden="true"></i></p>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<p><h1>Information</h1></p>
+			<p ><ul class="info">
+				<li>Terms & Conditions</li>
+				<li>About us</li>
+				<li>Copyright</li>
+			</ul></p>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<p><h1>Contact us</h1></p>
+			<p class="info"><i class="fa fa-mobile fa-2x" aria-hidden="true"></i>&nbsp;&nbsp; (617)-309-XXXX</p>
+			<p class="info"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>&nbsp;&nbsp; bhar.m@husky.neu.edu</p>
+			<p><div style="display: inline-block;"><i class="fa fa-location-arrow fa-2x " aria-hidden="true"></i></div>&nbsp;&nbsp;<div style="display: inline-block;"><p class="info">360 huntington avenue<br>Boston MA 02120</p></div></p>
+		</div>
+	</div>
+	</div>
+
+</footer>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+	
+	$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+</script>
+
+<!-- <script type="text/javascript">
+	
+
+
+
+
+
+  $(document).ready(function() {
+//$(window).scrollTop(200);
+var s;
+
+
+
+ 
+
+if($(".header").offset().top == 0) {
+  $("button#menutoggle").addClass("hide");
+}
+    var viewportWidth = $(window).width();
+    if (viewportWidth < 600) {
+            $(".navbar-nav").removeClass("pull-right");
+            $(".navbar").addClass("navbar-burger");
+    }
+    
+    $(window).resize(function () {
+    
+        if (viewportWidth < 600) {
+            $(".navbar-nav").removeClass("pull-right");
+            $(".navbar").addClass("navbar-burger");
+        }
+    }); 
+
+$("button#menutoggle").click(function() {
+  s = $(window).scrollTop();
+  //$(window).scrollTop(0);
+  $("#menu").removeClass("hide");
+  $("#menu1").removeClass("slideOutLeft");
+  $("#menu2").removeClass("slideOutRight");
+  $("#menu1").addClass("slideInLeft");
+  $("#menu2").addClass("slideInRight");
+  $("#menu").nextAll().removeClass("removeBlur");
+  $("#menu").nextAll().addClass("blur");
+  $(".carousel-control, img").addClass("zindex");
+  $("body").css("overflow","hidden");
+});
+
+$("button#menubtn").click(function() {
+  
+  $("#menu1").removeClass("slideInLeft");
+  $("#menu2").removeClass("slideInRight");
+  $("#menu1").addClass("slideOutLeft");
+  $("#menu2").addClass("slideOutRight");
+
+  //$("#main").removeClass("hide");
+  setTimeout(function(){ 
+  $("#menu").addClass("hide");
+  $("#menu").nextAll().removeClass("blur");
+  $("#menu").nextAll().addClass("removeBlur"); 
+$("button#menutoggle").addClass("hide");
+$("body").css("overflow","visible");
+checkMenuToggleBtn();
+$(window).scrollTop(s);}, 300);
+
+  function checkMenuToggleBtn() {
+    var sc = $(window).scrollTop();
+    var sc2 = ($("nav").offset().top + $("nav").outerHeight());
+
+    if(sc > sc2) {
+      $("button#menutoggle").removeClass("hide");
+    }
+  }
+  
+
+});
+
+$(window).scroll(function() {
+
+  var x = $(this).scrollTop();
+
+  if (x >= ($("nav").offset().top + $("nav").outerHeight()) ) {
+    $("button#menutoggle").removeClass("hide");
+  }
+
+  if(x <= ($("nav").offset().top + $("nav").outerHeight())) {
+    $("button#menutoggle").addClass("removeBlur");
+    $("button#menutoggle").addClass("hide");
+    $("button#menutoggle").addClass("removeBlur");
+  }
+});
+
+
+$("a#home").hover(function() {
+  $('.homemenu').removeClass("hide");
+  $('.homemenu').addClass("fadeIn");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").addClass("hide");
+});
+
+ $('a#messages').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").removeClass("hide");
+  $(".messagesMenu").addClass("fadeIn");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").addClass("hide");
+});
+
+$('a#profile').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").removeClass("hide");
+  $(".profileMenu").addClass("fadeIn");
+  $(".settingsmenu").addClass("hide");
+});
+
+$('a#settings').hover(function() {
+  $('.homemenu').addClass("hide");
+  $(".messagesMenu").addClass("hide");
+  $(".profileMenu").addClass("hide");
+  $(".settingsmenu").removeClass("hide");
+  $(".settingsmenu").addClass("fadeIn");
+});
+
+
+$("button.feedbackBtn").click(function() {
+
+  $("button.feedbackBtn").addClass("hide");
+  $(".feedbackForm").removeClass("hide");
+  $(".feedbackForm").addClass("slideInRight");
+
+});
+
+$("button.feedbackCloseBtn").click(function() {
+  $(".feedbackForm").addClass("hide");
+  $("button.feedbackBtn").removeClass("hide");
+  $("button.feedbackBtn").css("margin-right", "0");
+})
+
+});
+</script> -->
+
+
+
+</body>
+</html>
